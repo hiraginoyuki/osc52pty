@@ -11,5 +11,9 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: 1.22.0
-      - name: sshx
-        run: curl -sSf https://sshx.io/get | sh -s run
+      - name: Build
+        run: go build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: osc52pty
+          path: ./osc52pty
